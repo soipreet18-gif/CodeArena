@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up | CodeArena</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Redaction+50:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-image">
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a class="CodeArena" href="index.html">CodeArena</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="page-container">
+            <div class="signup-form">
+                <h3 class="signup">Sign up</h3>
+                <p>Welcome back please sign up</p>
+                <form action="">
+                    <label for="name"></label>
+                    <input type="text" name="name" id="name" placeholder="Full Name">
+                    <label for="email"></label>
+                    <input type="email" name="email" id="email" placeholder="Email address" required>
+                    <label for="password"></label>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                    <label for="confirm-password"></label>
+                    <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password">
+                    <input class="signup-button" type="submit" value="Sign up">
+                </form>
+                <p id="signin">Already have an account <a href="login.html" id="sign-in-link">Sign In</a></p>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="signup.js"></script>
+</body>
+</html>
