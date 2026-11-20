@@ -22,6 +22,16 @@ function showMessage(text, color) {
     message.style.color = color;
 }
 
+// Check if user was redirected because email is unverified
+const urlParams = new URLSearchParams(window.location.search);
+
+if (urlParams.get("verification") === "required") {
+    showMessage(
+        "Please verify your email before accessing CodeArena.",
+        "#ff6b6b"
+    );
+}
+
 // Handle login form submission
 loginForm.addEventListener("submit", async function (event) {
 
@@ -65,11 +75,14 @@ loginForm.addEventListener("submit", async function (event) {
 
     } catch (error) {
 
-        if (error.message === "Email not confirmed") {
-            showMessage("Please verify your email before logging in.", "#ff6b6b");
-        } else {
-            showMessage(error.message, "#ff6b6b");
-        }
+        if (error.code === "email_not_confirmed") {
+    showMessage(
+        "Please verify your email before logging in.",
+        "#ff6b6b"
+    );
+} else {
+    showMessage(error.message, "#ff6b6b");
+}
 
     } finally {
         loginButton.disabled = false;

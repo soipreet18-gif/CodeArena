@@ -58,6 +58,11 @@ if (challengesError) {
 
 
     console.log("Logged-in user:", user);
+    // Check email verification
+if (!user.email_confirmed_at) {
+    window.location.href = "login.html?verification=required";
+    return;
+}
     const displayName =
     user.user_metadata?.full_name ||
     user.user_metadata?.name ||
