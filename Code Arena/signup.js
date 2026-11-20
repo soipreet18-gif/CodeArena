@@ -67,19 +67,22 @@ signupForm.addEventListener("submit", async function (event) {
 
     try {
 
-        // Send signup request to Supabase
-        const { data, error } = await supabase.auth.signUp({
+        
+const { data, error } = await supabase.auth.signUp({
 
-            email: email,
-            password: password,
+    email: email,
+    password: password,
 
-            options: {
-                data: {
-                    full_name: fullName
-                }
-            }
+    options: {
+        data: {
+            full_name: fullName
+        },
 
-        });
+        emailRedirectTo: "https://codearenapreet.netlify.app/login.html"
+    }
+
+});
+
 
         // Handle Supabase errors
         if (error) {
