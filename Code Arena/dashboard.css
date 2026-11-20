@@ -1,0 +1,1005 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    color: white;
+    overflow-x: hidden;
+    min-height: 100vh;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.bg-image{
+    background: url(Assests/dashboard.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-color: #080719;
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
+    padding: 15px;
+}
+
+#CodeArena{
+    text-decoration: none;
+    color: white;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 30px;
+    cursor: pointer;
+    width: fit-content;
+    position: absolute;
+    top: 25px;
+    left: 35px;
+    z-index: 10;
+    font-weight: bolder;
+}
+
+#CodeArena::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #FFFFFF;
+    bottom: 0px;
+    left: 0;
+    transition: width 0.5s ease;
+}
+
+#CodeArena:hover::after {
+    width: 100%;
+}
+
+li{
+    list-style: none;
+}
+
+.aside-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 20%;
+    width: 220px;
+    flex-shrink: 0;
+    padding: 20px 15px;
+    min-height: 90vh;
+    border: 1px solid rgba(113, 56, 245, 0.25);
+    border-radius: 18px;
+    background: rgba(10, 8, 30, 0.65);
+    backdrop-filter: blur(15px);
+}
+
+.aside-left nav ul {
+    padding: 0;
+    margin-top: 35px;
+}
+
+.aside-left nav li {
+    padding: 13px 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    color: #c5c1dc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.aside-left nav li:hover {
+    color: white;
+    background: rgba(113, 56, 245, 0.2);
+    transform: translateX(5px);
+}
+
+.right-side{
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    padding: 10px;
+}
+
+li{
+    margin-top: 30px;
+}
+
+.dashboard{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1600px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 15px;
+    gap: 22px;
+    align-items: flex-start;
+}
+
+.navigation-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px 10 25px;
+}
+
+
+.search-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    width: 48px;
+    height: 48px;
+
+    border: 2px solid #7138F5;
+    border-radius: 50px;
+
+    background-color: rgba(10, 8, 30, 0.85);
+
+    color: white;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 15px;
+
+    padding: 0 15px 0 44px;
+
+    outline: none;
+    cursor: pointer;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23A78BFA' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-4-4'/%3E%3C/svg%3E");
+
+    background-repeat: no-repeat;
+    background-position: 11px center;
+    background-size: 23px;
+
+    transition:
+        width 0.45s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+        border-radius 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+.search-input:focus {
+    width: 320px;
+    border-radius: 14px;
+
+    border-color: #16B8FF;
+
+    background-color: rgba(12, 10, 35, 0.97);
+
+    box-shadow:
+        0 0 10px rgba(113, 56, 245, 0.5),
+        0 0 25px rgba(22, 184, 255, 0.2);
+
+    cursor: text;
+    max-width: 100%;
+}
+
+
+.search-input::placeholder {
+    color: transparent;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.search-input:focus::placeholder {
+    color: #aaa5c5;
+    opacity: 1;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+@media (max-width: 600px) {
+    .search-input:focus {
+        width: min(250px, 65vw);
+    }
+}
+
+.upper-section{
+    transition: all 0.7s ease-in-out;
+    cursor: pointer;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.upper-section:hover{
+        box-shadow: 0px 0px 20px 9px #7138F5;
+}
+
+.middle-section{
+    display: flex;
+    justify-content: center;
+}
+
+.last-section{
+    display: flex;
+    justify-content: center;
+}
+
+.daily-challenges-bg-image{
+    width: 100%;
+}
+
+.daily-challenges{
+    width: 100%;
+
+}
+
+.progress{
+    width: 40%;
+}
+
+.leaderboard{
+    width: 50%;
+}
+
+.recent-activity{
+    width: 50%;
+}
+
+
+
+.welcome {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+
+    width: 100%;
+    margin: 30px 0 0;
+    padding: 0;
+
+    border: none;
+}
+
+
+.stat-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    min-height: 82px;
+    padding: 15px 18px;
+    margin: 0;
+
+    overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    background: rgba(15, 13, 38, 0.85);
+    backdrop-filter: blur(12px);
+
+    transition: 0.3s ease;
+}
+
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.stat-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    font-size: 25px;
+}
+
+
+.stat-info {
+    position: relative;
+    z-index: 2;
+}
+
+.stat-info h3 {
+    font-size: 27px;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+.stat-info p {
+    font-size: 12px;
+    color: #c5c1dc;
+    margin: 2px 0 0;
+    white-space: nowrap;
+}
+
+
+.stat-chart {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 38%;
+    height: 55%;
+
+    opacity: 0.9;
+}
+
+.stat-chart svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.stat-chart path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    vector-effect: non-scaling-stroke;
+}
+
+
+.points-card {
+    border-color: rgba(113, 56, 245, 0.4);
+    background: linear-gradient(
+        120deg,
+        rgba(113, 56, 245, 0.18),
+        rgba(15, 13, 38, 0.95)
+    );
+    color: #A855F7;
+}
+
+.points-card .stat-icon {
+    background: rgba(113, 56, 245, 0.2);
+    color: #A855F7;
+}
+
+
+.solved-card {
+    border-color: rgba(22, 184, 255, 0.4);
+    background: linear-gradient(
+        120deg,
+        rgba(22, 184, 255, 0.15),
+        rgba(15, 13, 38, 0.95)
+    );
+    color: #16B8FF;
+}
+
+.solved-card .stat-icon {
+    background: #16B8FF;
+    color: #071326;
+}
+
+
+.streak-card {
+    border-color: rgba(255, 170, 50, 0.4);
+    background: linear-gradient(
+        120deg,
+        rgba(255, 170, 50, 0.14),
+        rgba(15, 13, 38, 0.95)
+    );
+    color: #FFB347;
+}
+
+.streak-card .stat-icon {
+    background: rgba(255, 170, 50, 0.2);
+    color: #FFB347;
+}
+
+
+@media (max-width: 850px) {
+    .welcome {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    .welcome {
+        grid-template-columns: 1fr;
+    }
+}
+
+.daily-challenge-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.challenge-info {
+  max-width: 600px;
+  vertical-align: bottom;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #818cf8;
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.challenge-info h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.challenge-info p {
+  margin: 0;
+  color: #cbd5e1;
+  line-height: 1.5;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900');
+
+:root {
+  --text-color: hsla(210, 50%, 85%, 1);
+  --shadow-color: hsla(210, 40%, 52%, .4);
+  --btn-color: hsl(210, 80%, 42%);
+  --bg-color: #141218;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 0;
+    padding: 0;
+    border: none;
+    margin-left: 0px;
+}
+
+.challenges {
+    box-sizing: border-box;
+    display: inline-flex;
+    width: 200px;
+    height: 45px;
+    line-height: 41px;
+
+    font-size: 18px;
+    font-family: "Space Grotesk", sans-serif;
+    text-decoration: none;
+
+    color: white;
+    background: transparent;
+
+    border: 2px solid #7138F5;
+    border-radius: 6px;
+
+    letter-spacing: 1px;
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+    transition: all 0.35s ease;
+    padding-left: 15px;
+}
+
+.challenges span {
+    position: relative;
+    z-index: 2;
+}
+
+.challenges::after {
+    position: absolute;
+    content: "";
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 100%;
+
+    background: #7138F5;
+
+    transition: all 0.35s ease;
+}
+
+.challenges:hover::after {
+    width: 100%;
+}
+
+.challenges:hover {
+    color: white;
+}
+
+.challenges:hover:after{
+  width: 100%;
+}
+
+.challenges:focus,
+.challenges:active {
+    outline: none;
+    box-shadow: none;
+}
+
+
+/* =====================================
+   CODEARENA DASHBOARD - DESIGN IMPROVEMENTS
+===================================== */
+
+/* 1. Global improvements */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #080719;
+}
+
+.bg-image {
+    min-height: 100vh;
+    width: 100%;
+    padding: 15px;
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* 2. Main dashboard layout */
+
+.dashboard {
+    width: 100%;
+    max-width: 1600px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 15px;
+    gap: 22px;
+    align-items: flex-start;
+}
+
+.aside-left {
+    width: 220px;
+    flex-shrink: 0;
+    padding: 20px 15px;
+    min-height: 90vh;
+    border: 1px solid rgba(113, 56, 245, 0.25);
+    border-radius: 18px;
+    background: rgba(10, 8, 30, 0.65);
+    backdrop-filter: blur(15px);
+}
+
+.right-side {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    padding: 10px;
+}
+
+
+/* 3. Sidebar navigation */
+
+.aside-left nav ul {
+    padding: 0;
+    margin-top: 35px;
+}
+
+.aside-left nav li {
+    padding: 13px 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    color: #c5c1dc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.aside-left nav li:hover {
+    color: white;
+    background: rgba(113, 56, 245, 0.2);
+    transform: translateX(5px);
+}
+
+
+/* 4. Search bar spacing */
+
+.navigation-bar {
+    padding: 15px 10px 25px;
+}
+
+.search-input:focus {
+    max-width: 100%;
+}
+
+
+/* 5. Welcome section */
+
+.upper-bg-image {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.upper-section {
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    background: rgba(15, 13, 38, 0.65);
+}
+
+.upper-section h2 {
+    font-size: clamp(23px, 3vw, 34px);
+    margin-bottom: 10px;
+}
+
+.upper-section > p {
+    color: #c5c1dc;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+
+/* 6. Statistics cards */
+
+.welcome {
+    margin-top: 25px;
+    gap: 15px;
+}
+
+.stat-card {
+    min-width: 0;
+    min-height: 90px;
+    padding: 16px;
+    border-radius: 18px;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(113, 56, 245, 0.18);
+}
+
+.stat-info h3 {
+    font-size: clamp(21px, 2vw, 28px);
+}
+
+.stat-info p {
+    font-size: 12px;
+}
+
+
+/* 7. Daily challenge section */
+
+.middle-section {
+    width: 100%;
+    gap: 20px;
+    align-items: stretch;
+    margin: 25px 0;
+}
+
+.daily-challenges-bg-image {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+}
+
+.daily-challenge-card {
+    width: 100%;
+    min-height: 230px;
+    padding: 30px;
+    border-radius: 18px;
+
+    background: linear-gradient(
+        120deg,
+        rgba(113, 56, 245, 0.17),
+        rgba(15, 13, 38, 0.92)
+    );
+
+    border: 1px solid rgba(113, 56, 245, 0.35);
+
+    transition: all 0.35s ease;
+}
+
+.daily-challenge-card:hover {
+    border-color: rgba(22, 184, 255, 0.65);
+    box-shadow: 0 0 25px rgba(113, 56, 245, 0.16);
+}
+
+.challenge-info h2 {
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.challenge-info p {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.wrapper {
+    flex-shrink: 0;
+}
+
+.challenges {
+    justify-content: center;
+    align-items: center;
+    padding: 0 12px;
+    border-color: #7138F5;
+    border-radius: 8px;
+}
+
+.challenges:hover {
+    box-shadow: 0 0 18px rgba(113, 56, 245, 0.35);
+}
+
+
+/* 8. Leaderboard and activity */
+
+.last-section {
+    width: 100%;
+    gap: 20px;
+    align-items: stretch;
+    margin-top: 25px;
+}
+
+.leaderboard,
+.recent-activity {
+    flex: 1;
+    min-width: 0;
+    padding: 25px;
+    margin: 0;
+    border: 1px solid rgba(113, 56, 245, 0.3);
+    border-radius: 18px;
+    background: rgba(15, 13, 38, 0.8);
+    backdrop-filter: blur(12px);
+    transition: 0.3s ease;
+}
+
+.leaderboard:hover,
+.recent-activity:hover {
+    border-color: rgba(22, 184, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+.leaderboard h4,
+.recent-activity h4 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.leaderboard a,
+.recent-activity a {
+    color: #A78BFA;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.leaderboard a:hover,
+.recent-activity a:hover {
+    color: #16B8FF;
+}
+
+.leaderboard table {
+    width: 100%;
+    margin-top: 22px;
+    border-collapse: collapse;
+}
+
+.leaderboard td {
+    padding: 14px 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 14px;
+}
+
+.leaderboard tr:last-child td {
+    border-bottom: none;
+}
+
+.Points {
+    color: #16B8FF;
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+/* Tablets */
+
+@media (max-width: 1000px) {
+
+    .dashboard {
+        gap: 12px;
+        padding: 8px;
+    }
+
+    .aside-left {
+        width: 180px;
+    }
+
+    .right-side {
+        padding: 5px;
+    }
+
+    .daily-challenge-card {
+        padding: 22px;
+        gap: 15px;
+    }
+
+    .last-section {
+        gap: 12px;
+    }
+}
+
+
+/* Small tablets and large phones */
+
+@media (max-width: 750px) {
+
+    .dashboard {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .aside-left {
+        width: 100%;
+        min-height: auto;
+        padding: 15px;
+    }
+
+    .aside-left nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin-top: 15px;
+    }
+
+    .aside-left nav li {
+        margin: 0;
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .right-side {
+        width: 100%;
+    }
+
+    .daily-challenge-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .wrapper {
+        margin-top: 15px;
+    }
+
+    .last-section {
+        flex-direction: column;
+    }
+
+    .leaderboard,
+    .recent-activity {
+        width: 100%;
+    }
+}
+
+
+/* Mobile phones */
+
+@media (max-width: 550px) {
+
+    .bg-image {
+        padding: 5px;
+        background-attachment: scroll;
+    }
+
+    .dashboard {
+        padding: 5px;
+        gap: 12px;
+    }
+
+    .aside-left {
+        padding: 12px;
+    }
+
+    #CodeArena {
+        position: relative;
+        top: auto;
+        left: auto;
+        display: inline-block;
+        font-size: 25px;
+        margin: 5px;
+    }
+
+    .aside-left nav ul {
+        gap: 5px;
+    }
+
+    .aside-left nav li {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .navigation-bar {
+        padding: 15px 5px;
+    }
+
+    .search-input:focus {
+        width: min(280px, 75vw);
+    }
+
+    .upper-section {
+        padding: 20px 15px;
+    }
+
+    .upper-section h2 {
+        font-size: 23px;
+    }
+
+    .upper-section > p {
+        font-size: 13px;
+    }
+
+    .welcome {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .stat-card {
+        min-height: 80px;
+    }
+
+    .middle-section {
+        margin: 15px 0;
+    }
+
+    .daily-challenge-card {
+        padding: 20px 15px;
+        gap: 15px;
+    }
+
+    .challenge-info h2 {
+        font-size: 21px;
+    }
+
+    .challenge-info p {
+        font-size: 13px;
+    }
+
+    .challenges {
+        width: 190px;
+        font-size: 15px;
+    }
+
+    .leaderboard,
+    .recent-activity {
+        padding: 18px 12px;
+    }
+
+    .leaderboard td {
+        font-size: 12px;
+        padding: 12px 5px;
+    }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard | CodeArena</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Redaction+50:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg-image">
+        <div class="dashboard">
+            <div class="aside-left">
+                <div class="code-arena">
+                    <h1><a href="index.html" id="CodeArena">CodeArena</a></h1>
+                </div>
+                <aside>
+                    <nav>
+                        <ul>
+                            <li>Home</li>
+                            <li>Challenges</li>
+                            <li>My Progress</li>
+                            <li>Leaderboard</li>
+                            <li>Profile</li>
+                            <li>Settings</li>
+                            <li>Logout</li>
+                        </ul>
+                    </nav>
+                </aside>
+            </div>
+            <div class="right-side">
+                <div class="navigation-bar">
+                    <form class="search-form" action="#" method="get" role="search">
+                        <label for="dashboard-search" class="sr-only">
+                            Search challenges
+                        </label>
+
+                        <input type="search" id="dashboard-search" class="search-input" name="q"
+                            placeholder="Search challenges..." autocomplete="off" />
+                    </form>
+                </div>
+                <div class="upper-bg-image">
+                    <div class="upper-section">
+                        <h2>Welcome back, <span>Preet! 👋👋</span></h2>
+                        <p>Ready to sharpen your coding skills today?</p>
+                        <div class="welcome">
+                            <div class="stat-card points-card">
+                                <div class="stat-icon">🏆</div>
+                                <div class="stat-info">
+                                    <h3>750</h3>
+                                    <p>Total Points</p>
+                                </div>
+                                <div class="stat-chart">
+                                    <svg viewBox="0 0 100 40" preserveAspectRatio="none">
+                                        <path d="M0 35 C20 30, 25 38, 40 20 S65 30, 80 10 S90 15, 100 2" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="stat-card solved-card">
+                                <div class="stat-icon">✔</div>
+                                <div class="stat-info">
+                                    <h3>12</h3>
+                                    <p>Solved Challenges</p>
+                                </div>
+                                <div class="stat-chart">
+                                    <svg viewBox="0 0 100 40" preserveAspectRatio="none">
+                                        <path d="M0 35 C20 30, 25 38, 40 20 S65 30, 80 10 S90 15, 100 2" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="stat-card streak-card">
+                                <div class="stat-icon">🔥</div>
+                                <div class="stat-info">
+                                    <h3>7</h3>
+                                    <p>Day Streak</p>
+                                </div>
+                                <div class="stat-chart">
+                                    <svg viewBox="0 0 100 40" preserveAspectRatio="none">
+                                        <path d="M0 35 C20 30, 25 38, 40 20 S65 30, 80 10 S90 15, 100 2" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="middle-section">
+                    <div class="daily-challenges-bg-image">
+                        <div class="daily-challenge-card">
+                            <div class="challenge-info">
+                                <span class="badge">Daily Challenge</span>
+                                <h2>Find the Missing Number</h2>
+                                <p>Given an array of numbers from 1 to n, find the missing number in the array.</p>
+                            </div>
+                             <div class="wrapper">
+                                 <a href="#" class="challenges"><span>Start Challenge</span></a>
+                            </div>
+                    </div>
+                </div>
+                    <!-- <div class="progress">
+                        <h4>Your Progess</h4>
+                        <a href="#">View Details</a>
+                    </div> -->
+                </div>
+                <div class="last-section">
+                    <div class="leaderboard">
+                        <h4>Leaderboard</h4>
+                        <a href="#">View Full Leaderboard</a>
+                        <table>
+                            <tr>
+                                <td>Rohan Mehta</td>
+                                <td><span class="Points">12,500</span>Points</td>
+                            </tr>
+                            <tr>
+                                <td>Dhruv Patel</td>
+                                <td><span class="Points">11,200</span>Points</td>
+                            </tr>
+                            <tr>
+                                <td>Aarav Shah</td>
+                                <td><span class="Points">10,850</span>Points</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="recent-activity">
+                        <h4>Recent Activity</h4>
+                        <a href="#">View All &#8594;</a>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="footer">
+                <footer>
+                    <p>&copy; CodeArena. Built for Developers.</p>
+                </footer>
+            </div> -->
+        </div>
+    </div>
+    <script type="module" src="dashboard.js"></script>
+</body>
+
+</html>
